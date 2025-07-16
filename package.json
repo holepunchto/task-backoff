@@ -6,6 +6,12 @@
   "dependencies": {
     "event-loop-delay": "^1.1.2"
   },
+  "devDependencies": {
+    "standard": "^17.1.2"
+  },
+  "scripts": {
+    "test": "standard"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/holepunchto/task-backoff.git"
