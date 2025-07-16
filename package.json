@@ -8,10 +8,11 @@
     "resolve-reject-promise": "^1.1.0"
   },
   "devDependencies": {
+    "brittle": "^3.16.5",
     "standard": "^17.1.2"
   },
   "scripts": {
-    "test": "standard"
+    "test": "standard && brittle test.js"
   },
   "repository": {
     "type": "git",
