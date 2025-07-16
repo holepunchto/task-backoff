@@ -1,6 +1,6 @@
 {
   "name": "task-backoff",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Small module to do smart delays in tight loops to maintain a certain event loop delay",
   "main": "index.js",
   "dependencies": {
