@@ -1,0 +1,19 @@
+{
+  "name": "task-backoff",
+  "version": "0.0.0",
+  "description": "Small module to do smart delays in tight loops to maintain a certain event loop delay",
+  "main": "index.js",
+  "dependencies": {
+    "event-loop-delay": "^1.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/holepunchto/task-backoff.git"
+  },
+  "author": "Holepunch Inc.",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/holepunchto/task-backoff/issues"
+  },
+  "homepage": "https://github.com/holepunchto/task-backoff"
+}
