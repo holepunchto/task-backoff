@@ -2,17 +2,17 @@ const eld = require('event-loop-delay')
 const rrp = require('resolve-reject-promise')
 
 module.exports = class TaskBackoff {
-  constructor ({ maxDelay = 100 } = {}) {
+  constructor ({ maxDelay = 100, ref = true } = {}) {
     this.sampler = eld()
     this.maxDelay = maxDelay
     this.prevDelay = 0
     this.prevPrevDelay = 0
-    this.ops = 0
     this.lastTick = Date.now()
-    this.timer = setInterval(this._tick.bind(this), 100)
-    // if (this.timer.unref) this.timer.unref()
+    this.timer = setInterval(this._tick.bind(this), Math.min(maxDelay, 100))
     this.waiting = []
     this.destroyed = false
+
+    if (!ref && this.timer.unref) this.timer.unref()
   }
 
   _tick () {
@@ -28,7 +28,7 @@ module.exports = class TaskBackoff {
   }
 
   backoff () {
-    return this.destroyed === false && (((this.sampler.delay - this.prevPrevDelay) >= 100) || (Date.now() - this.lastTick) >= this.maxDelay)
+    return this.destroyed === false && (((this.sampler.delay - this.prevPrevDelay) >= this.maxDelay) || (Date.now() - this.lastTick) >= (this.maxDelay + 10))
   }
 
   destroy () {

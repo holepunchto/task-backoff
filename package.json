@@ -4,7 +4,8 @@
   "description": "Small module to do smart delays in tight loops to maintain a certain event loop delay",
   "main": "index.js",
   "dependencies": {
-    "event-loop-delay": "^1.1.2"
+    "event-loop-delay": "^1.1.2",
+    "resolve-reject-promise": "^1.1.0"
   },
   "devDependencies": {
     "standard": "^17.1.2"
